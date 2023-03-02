@@ -15,7 +15,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    it('Second Exercise: Fill Only Required Fields', () => {
+    /*it('Second Exercise: Fill Only Required Fields', () => {
         service.fillFullRequiredFields(Person.name, Person.surname, Person.email, Person.phone, Person.product, Person.serviceType, Person.contactMeans, Person.message);
 
         service.attachFile('file.txt');
@@ -34,5 +34,10 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
         service.submitForm();
         cy.get(Home_Locators.messageFailure).should('be.visible');
+    })*/
+
+    it('Fourth Exercise: Validate Type Input Telefone Number', () => {
+        service.fillPhoneField('ACB1234567890OK');
+        cy.get(Home_Locators.phoneInput).should('have.value', '1234567890');
     })
 })
