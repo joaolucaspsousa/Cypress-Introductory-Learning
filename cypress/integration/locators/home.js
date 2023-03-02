@@ -16,7 +16,8 @@ const Home_Locators = {
 
     submitButton: '.button',
 
-    messageSuccess: '.success'
+    messageSuccess: '.success',
+    messageFailure: '.error'
 }
 
 export default Home_Locators;

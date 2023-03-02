@@ -15,13 +15,24 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    it('Second Exercise: Fill Full Fields', () => {
+    it('Second Exercise: Fill Only Required Fields', () => {
         service.fillFullRequiredFields(Person.name, Person.surname, Person.email, Person.phone, Person.product, Person.serviceType, Person.contactMeans, Person.message);
 
         service.attachFile('file.txt');
-
         service.submitForm();
 
         cy.get(Home_Locators.messageSuccess).should('be.visible');
+    })
+
+    it('Third Exercise: Dont Fill One Or More Required Fields', () => {
+        service.fillNameField(Person.name);
+        service.fillSurnameField(Person.surname);
+
+        service.selectProduct(Person.product);
+        service.selectServiceType(Person.serviceType);
+        service.fillMessage(Person.message);
+
+        service.submitForm();
+        cy.get(Home_Locators.messageFailure).should('be.visible');
     })
 })
