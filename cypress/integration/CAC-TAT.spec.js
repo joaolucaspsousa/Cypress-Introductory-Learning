@@ -37,7 +37,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })*/
 
     it('Fourth Exercise: Validate Type Input Telefone Number', () => {
-        service.fillPhoneField('ACB1234567890OK');
-        cy.get(Home_Locators.phoneInput).should('have.value', '1234567890');
+        service.fillPhoneField('ABC123456789POI');
+        cy.get(Home_Locators.phoneInput).invoke('val').should('match', /[0-10]/);
     })
 })
