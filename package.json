@@ -1,0 +1,21 @@
+{
+    "name": "curso-basico-cypress-learning",
+    "version": "1.0.0",
+    "description": "Aprendizado de Cypress.io",
+    "main": "application/index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joaolucaspsousa/Cypress-Learning"
+    },
+    "keywords": [
+        "Testing",
+        "Cypress.io",
+        "Cypress Básico"
+    ],
+    "author": "João Lucas <joaosousa@tokenlab.com.br>",
+    "license": "MIT",
+    "homepage": "https://github.com/joaolucaspsousa/Cypress-Learning"
+}
