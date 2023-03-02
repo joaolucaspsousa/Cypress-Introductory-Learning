@@ -34,10 +34,28 @@ describe('Central de Atendimento ao Cliente TAT', () => {
 
         service.submitForm();
         cy.get(Home_Locators.messageFailure).should('be.visible');
-    })*/
+    })
 
     it('Fourth Exercise: Validate Type Input Telefone Number', () => {
         service.fillPhoneField('ABC123456789POI');
         cy.get(Home_Locators.phoneInput).invoke('val').should('match', /[0-10]/);
+    })*/
+
+    it('Fifth Exercise: Fill and Clear Fields Name, Surname, Email and Phone', () => {
+        service.fillNameField(Person.name);
+        cy.get(Home_Locators.nameInput).should('have.value', Person.name);
+        cy.get(Home_Locators.nameInput).clear().should('have.value', '');
+
+        service.fillSurnameField(Person.surname);
+        cy.get(Home_Locators.surnameInput).should('have.value', Person.surname);
+        cy.get(Home_Locators.surnameInput).clear().should('have.value', '');
+
+        service.fillEmailField(Person.email);
+        cy.get(Home_Locators.emailInput).should('have.value', Person.email);
+        cy.get(Home_Locators.emailInput).clear().should('have.value', '');
+
+        service.fillPhoneField(Person.phone);
+        cy.get(Home_Locators.phoneInput).should('have.value', Person.phone);
+        cy.get(Home_Locators.phoneInput).clear().should('have.value', '');
     })
 })

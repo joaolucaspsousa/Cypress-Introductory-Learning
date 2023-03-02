@@ -1,5 +1,5 @@
 const settings = {
-    delay: 10
+    delay: 100
 }
 
 export default settings;
