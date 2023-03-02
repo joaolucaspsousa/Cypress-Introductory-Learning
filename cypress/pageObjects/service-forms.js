@@ -2,15 +2,15 @@ import Home_Locators from "../locators/home";
 import Settings from "../settings/settings";
 
 class serviceForms {
-    fillFullRequiredFields(name, surname, email, phone, product, serviceType, contactMeans, message) {
-        this.fillNameField(name);
-        this.fillSurnameField(surname);
-        this.fillEmailField(email);
-        this.fillPhoneField(phone);
-        this.selectProduct(product);
-        this.selectServiceType(serviceType);
-        this.selectContactMeans(contactMeans);
-        this.fillMessage(message);
+    fillFullRequiredFields(User) {
+        this.fillNameField(User.name);
+        this.fillSurnameField(User.surname);
+        this.fillEmailField(User.email);
+        this.fillPhoneField(User.phone);
+        this.selectProduct(User.product);
+        this.selectServiceType(User.serviceType);
+        this.selectContactMeans(User.contactMeans);
+        this.fillMessage(User.message);
     }
 
     fillNameField(name) {

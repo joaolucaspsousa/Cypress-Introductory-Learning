@@ -1,7 +1,7 @@
 // <reference types="cypress" />
-import Home_Locators from "./locators/home";
-import serviceForms from "./class/service-forms";
-import Person from "./person/person";
+import Home_Locators from "../locators/home";
+import serviceForms from "../pageObjects/service-forms";
+import Person from "../fixtures/person";
 import 'cypress-file-upload';
 
 describe('Central de Atendimento ao Cliente TAT', () => {
@@ -15,8 +15,9 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    /*it('Second Exercise: Fill Only Required Fields', () => {
-        service.fillFullRequiredFields(Person.name, Person.surname, Person.email, Person.phone, Person.product, Person.serviceType, Person.contactMeans, Person.message);
+    it('Second Exercise: Fill Only Required Fields', () => {
+        service.fillFullRequiredFields(Person);
+        // cy.fillAllFields(Person)
 
         service.attachFile('file.txt');
         service.submitForm();
@@ -39,7 +40,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     it('Fourth Exercise: Validate Type Input Telefone Number', () => {
         service.fillPhoneField('ABC123456789POI');
         cy.get(Home_Locators.phoneInput).invoke('val').should('match', /[0-10]/);
-    })*/
+    })
 
     it('Fifth Exercise: Fill and Clear Fields Name, Surname, Email and Phone', () => {
         service.fillNameField(Person.name);
