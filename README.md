@@ -1,4 +1,5 @@
-☕ Usando Cypress
+## ☕ Usando Cypress
+
 Para usar corretamente o projeto, siga estas etapas:
 
 Execute os seguintes comandos
