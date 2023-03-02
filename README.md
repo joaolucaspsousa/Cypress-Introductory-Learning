@@ -8,8 +8,6 @@ Execute os seguintes comandos
 
 ```npm install```
 
-```npm start```
-
 ```npx cypress open```
 
 ...

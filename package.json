@@ -17,5 +17,8 @@
     ],
     "author": "João Lucas <joaosousa@tokenlab.com.br>",
     "license": "MIT",
-    "homepage": "https://github.com/joaolucaspsousa/Cypress-Learning"
+    "homepage": "https://github.com/joaolucaspsousa/Cypress-Learning",
+    "devDependencies": {
+        "cypress": "^9.5.1"
+    }
 }
