@@ -15,11 +15,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    it('Second Exercise: Fill Only Required Fields', () => {
+    it.only('Second Exercise: Fill Only Required Fields', () => {
         service.fillFullRequiredFields(Person);
         // cy.fillAllFields(Person)
 
-        service.attachFile('file.txt');
+        service.selectFile('cypress/fixtures/file.txt');
         service.submitForm();
 
         cy.get(Home_Locators.messageSuccess).should('be.visible');

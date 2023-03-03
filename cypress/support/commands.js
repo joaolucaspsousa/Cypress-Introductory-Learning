@@ -44,10 +44,6 @@ Cypress.Commands.add('fillMessage', (message) => {
     cy.get(Home_Locators.messageTextarea).type(message, { delay: Settings.delay });
 });
 
-Cypress.Commands.add('attachFile', (file) => {
-    cy.get(Home_Locators.attachment).attachFile(file);
-});
-
 Cypress.Commands.add('submitForm', () => {
     cy.get(Home_Locators.submitButton).click();
 });

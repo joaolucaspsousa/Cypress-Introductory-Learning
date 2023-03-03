@@ -46,8 +46,8 @@ class serviceForms {
         cy.get(Home_Locators.messageTextarea).type(message, { delay: Settings.delay });
     }
 
-    attachFile(file) {
-        cy.get(Home_Locators.attachment).attachFile(file);
+    selectFile(file) {
+        cy.get(Home_Locators.attachment).selectFile(file);
     }
 
     submitForm() {

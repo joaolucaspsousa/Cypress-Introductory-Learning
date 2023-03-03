@@ -21,7 +21,6 @@
     "homepage": "https://github.com/joaolucaspsousa/Cypress-Learning",
     "devDependencies": {
         "@faker-js/faker": "^7.6.0",
-        "cypress": "^9.5.1",
-        "cypress-file-upload": "^5.0.8"
+        "cypress": "^9.5.1"
     }
 }
