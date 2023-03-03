@@ -17,7 +17,9 @@ const Home_Locators = {
     submitButton: '.button',
 
     messageSuccess: '.success',
-    messageFailure: '.error'
+    messageFailure: '.error',
+
+    linkPrivacyPolicy: '#privacy a'
 }
 
 export default Home_Locators;

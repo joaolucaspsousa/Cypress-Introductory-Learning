@@ -15,7 +15,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    it.only('Second Exercise: Fill Only Required Fields', () => {
+    it('Second Exercise: Fill Only Required Fields', () => {
         service.fillFullRequiredFields(Person);
         // cy.fillAllFields(Person)
 
@@ -63,16 +63,33 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     it('Sixth Exercise: Check each option of the radio button', () => {
         cy.get('input[type="radio"]')
             .each(($radio) => {
-                cy.wrap($radio).check().should('be.checked');
+                cy.wrap($radio)
+                    .check()
+                    .should('be.checked');
             })
     })
 
     it('Seventh Exercise: Check all options, after uncheck last', () => {
         cy.get('input[type="checkbox"]')
             .each(($checkbox) => {
-                cy.wrap($checkbox).check().should('be.checked');
+                cy.wrap($checkbox)
+                    .check()
+                    .should('be.checked');
             })
 
         cy.get('input[type="checkbox"]').last().uncheck().should('not.be.checked');
+    })
+
+    it.only('Eighth Exercise: Dealing with links that open in another tab in the browser', () => {
+        // First alternative
+        cy.get(Home_Locators.linkPrivacyPolicy).should('have.attr', 'target', '_blank');
+
+        // Second alternative
+        cy.get(Home_Locators.linkPrivacyPolicy)
+            .invoke('removeAttr', 'target')
+            .click();
+
+        cy.contains('Política de privacidade')
+            .should('be.visible');
     })
 })
