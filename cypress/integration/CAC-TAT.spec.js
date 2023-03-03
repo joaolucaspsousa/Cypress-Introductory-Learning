@@ -2,7 +2,6 @@
 import Home_Locators from "../locators/home";
 import serviceForms from "../pageObjects/service-forms";
 import Person from "../fixtures/person";
-import 'cypress-file-upload';
 
 describe('Central de Atendimento ao Cliente TAT', () => {
     let service = new serviceForms();
