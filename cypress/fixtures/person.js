@@ -6,7 +6,7 @@ const Person = {
     email: faker.internet.email(),
     phone: faker.phone.phoneNumber('#########'),
     product: 'Blog',
-    serviceType: 2,
+    serviceType: 'feedback',
     contactMeans: 'phone',
     message: faker.lorem.sentence()
 }

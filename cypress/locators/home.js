@@ -6,7 +6,7 @@ const Home_Locators = {
 
     productSelect: '#product',
 
-    serviceTypeRadio: (numberOption) => `#support-type > :nth-child(${numberOption})`,
+    serviceTypeRadio: (option) => `input[type="radio"][value="${option}"]`,
 
     contactMeansCheckbox: (type) => `#check > [for="${type}"`,
 

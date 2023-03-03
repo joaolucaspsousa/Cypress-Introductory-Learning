@@ -34,8 +34,8 @@ class serviceForms {
         cy.get(Home_Locators.productSelect).select(product, { delay: Settings.delay });
     }
 
-    selectServiceType(numberOption) {
-        cy.get(Home_Locators.serviceTypeRadio(numberOption)).click();
+    selectServiceType(option) {
+        cy.get(Home_Locators.serviceTypeRadio(option)).check();
     }
 
     selectContactMeans(type) {
