@@ -32,8 +32,8 @@ Cypress.Commands.add('selectProduct', (product) => {
     cy.get(Home_Locators.productSelect).select(product);
 });
 
-Cypress.Commands.add('selectServiceType', (numberOption) => {
-    cy.get(Home_Locators.serviceTypeRadio(numberOption)).click();
+Cypress.Commands.add('selectServiceType', (option) => {
+    cy.get(Home_Locators.serviceTypeRadio(option)).check();
 });
 
 Cypress.Commands.add('selectContactMeans', (type) => {

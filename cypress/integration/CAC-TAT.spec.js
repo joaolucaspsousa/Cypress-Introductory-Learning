@@ -60,10 +60,19 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.get(Home_Locators.phoneInput).clear().should('have.value', '');
     })
 
-    it.only('Sixth Exercise: Check each option of the radio button', () => {
+    it('Sixth Exercise: Check each option of the radio button', () => {
         cy.get('input[type="radio"]')
             .each(($radio) => {
                 cy.wrap($radio).check().should('be.checked');
             })
-    });
+    })
+
+    it('Seventh Exercise: Check all options, after uncheck last', () => {
+        cy.get('input[type="checkbox"]')
+            .each(($checkbox) => {
+                cy.wrap($checkbox).check().should('be.checked');
+            })
+
+        cy.get('input[type="checkbox"]').last().uncheck().should('not.be.checked');
+    })
 })
