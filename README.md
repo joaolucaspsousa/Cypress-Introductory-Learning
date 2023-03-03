@@ -18,7 +18,7 @@ Execute `npm test` (ou `npm t` para a versão curta) para executar o teste no mo
 
 Ou execute `npm run cy:open` para abrir o Cypress no modo interativo.
 ___
-## ☕ Apoie este projeto
+## ☕ Support this project
 
 Se você quer apoiar este projeto, deixe um ⭐.
 
