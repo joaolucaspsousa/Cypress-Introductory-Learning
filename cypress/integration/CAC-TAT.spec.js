@@ -80,7 +80,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.get('input[type="checkbox"]').last().uncheck().should('not.be.checked');
     })
 
-    it.only('Eighth Exercise: Dealing with links that open in another tab in the browser', () => {
+    it('Eighth Exercise: Dealing with links that open in another tab in the browser', () => {
         // First alternative
         cy.get(Home_Locators.linkPrivacyPolicy).should('have.attr', 'target', '_blank');
 
