@@ -15,7 +15,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
 
-    it.only('Second Exercise: Fill Only Required Fields', () => {
+    it('Second Exercise: Fill Only Required Fields', () => {
         service.fillFullRequiredFields(Person);
         // cy.fillAllFields(Person)
 
@@ -59,4 +59,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.get(Home_Locators.phoneInput).should('have.value', Person.phone);
         cy.get(Home_Locators.phoneInput).clear().should('have.value', '');
     })
+
+    it.only('Sixth Exercise: Check each option of the radio button', () => {
+        cy.get('input[type="radio"]')
+            .each(($radio) => {
+                cy.wrap($radio).check().should('be.checked');
+            })
+    });
 })
