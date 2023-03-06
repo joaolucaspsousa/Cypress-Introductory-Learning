@@ -10,6 +10,13 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.visit('../../application/index.html');
     })
 
+    // Trabalhando com biblioteca Lodash (executa uma função 10 vezes)
+    Cypress._.times(10, () => {
+        it('First Exercise: Compair Title', () => {
+            cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
+        })
+    })
+
     it('First Exercise: Compair Title', () => {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT');
     })
@@ -105,5 +112,42 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.tick(3000);
 
         cy.get(Home_Locators.messageSuccess).should('not.be.visible');
+    })
+
+    it('Tenth Exercise: Show and Hidden messages of success and error using invoke method', () => {
+        cy.get(Home_Locators.messageSuccess).should('not.be.visible');
+        cy.get(Home_Locators.messageSuccess).invoke('show');
+        cy.get(Home_Locators.messageSuccess).should('be.visible');
+
+        cy.get(Home_Locators.messageSuccess).invoke('hide');
+        cy.get(Home_Locators.messageSuccess).should('not.be.visible');
+    })
+
+    it('Eleventh Exercise: Show and Hidden messages of success and error using trigger method', () => {
+        /*Esse teste não irá funcionar pois o elemento não funciona com mouse over
+        cy.get(Home_Locators.messageSuccess).should('not.be.visible');
+        cy.get(Home_Locators.messageSuccess).trigger('mouseover');
+        cy.get(Home_Locators.messageSuccess).should('be.visible');
+
+        cy.get(Home_Locators.messageSuccess).trigger('mouseout');
+        cy.get(Home_Locators.messageSuccess).should('not.be.visible');*/
+    })
+
+    it('Twelfth Exercise: Fill Field Text Area using method invoke', () => {
+        let message = Cypress._.repeat('ABC105KD90', 20);
+
+        cy.get(Home_Locators.messageTextarea).invoke('val', message)
+            .should('have.value', message);
+    })
+
+    it('Thirteenth Exercise: HTTP Request', () => {
+        cy.request('https://jsonplaceholder.typicode.com/posts')
+            .should((response) => {
+                expect(response.status).to.eq(200);
+                expect(response.body).to.have.length(100);
+                expect(response).to.have.property('headers');
+                expect(response).to.have.property('duration');
+                console.log(response)
+            })
     })
 })
