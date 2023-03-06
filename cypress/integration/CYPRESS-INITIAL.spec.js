@@ -91,4 +91,19 @@ describe('Central de Atendimento ao Cliente TAT', () => {
         cy.contains('Política de privacidade')
             .should('be.visible');
     })
+
+    it('Ninth Exercise: Freezing and advancing in time with the browser clock', () => {
+        cy.clock();
+
+        cy.fillAllFields(Person);
+
+        service.selectFile('cypress/fixtures/file.txt');
+        service.submitForm();
+
+        cy.get(Home_Locators.messageSuccess).should('be.visible');
+
+        cy.tick(3000);
+
+        cy.get(Home_Locators.messageSuccess).should('not.be.visible');
+    })
 })
