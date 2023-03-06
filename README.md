@@ -4,6 +4,23 @@ Repositório de aprendizado sobre automação Web com Cypress Framework do curso
 
 ___
 
+## Acquired Knowledge 
+
+- [x] Introdução ao Cypress
+- [x] Configurando Cypress
+- [x] Visitando páginas locais e remotas
+- [x] Interagindo com elementos (click, type, clear, etc)
+- [x] Trabalhando com formulários
+- [x] Trabalhando com elementos de formulários
+- [x] Fazendo upload de arquivos
+- [x] Fazendo requisições HTTP
+- [x] Criando comandos personalizados
+- [x] Padrão Page Objects
+- [x] Simulando dimensões de um dispositivo móvel
+- [x] Executando testes em um pipeline de integração contínua (CI)
+
+___
+
 ## 🖥️ Pre-requirements
 É necessário ter Node.js e npm instalados para executar este projeto.
 
